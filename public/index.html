@@ -16,14 +16,13 @@
             <ul class="nav nav-pills pull-right" role="tablist">
               <li role="presentation"><a href="#">Home</a></li>
               <li role="presentation"><a href="#">About</a></li>
-              <li role="presentation"><a href="#">Contact</a></li>
             </ul>
             <h3 class="text-muted">Docker Registry Quick Viewer</h3>
           </div>
 
           <div class="serachbar">
             <div class="input-group">
-                <input type="text" class="form-control" name="keyword" ng-model="keyword" placeholder="Please input image name, for example 'ubuntu', 'nodejs' etc.">
+                <input type="text" class="form-control" name="keyword" ng-model="keyword" ng-keyup="keyupHandler($event)" placeholder="Please input image name, for example 'ubuntu', 'nodejs' etc.">
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="button" ng-click="searchImages()">Search</button>
                 </span>
@@ -34,7 +33,7 @@
              <table class="table table-hover" ng-if="results">
                 <thead>
                     <caption>Found {{results.length}} Results:</caption>
-                    <tr>
+                    <tr class="active">
                       <th>#</th>
                       <th>Repository</th>
                       <th>Tag</th>

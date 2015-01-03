@@ -2,6 +2,8 @@
 var app = angular.module("app", []);
 
 
+//--------------------- controllers -------------------------//
+
 app.controller("mainCtrl", ["$scope", "dataService", function ($scope, dataService) {
     $scope.keyword = "";
 
@@ -17,12 +19,20 @@ app.controller("mainCtrl", ["$scope", "dataService", function ($scope, dataServi
             $scope.details = data;
             $("#imgDetails").modal('show');
         });
-    }
+    };
+
+    $scope.keyupHandler = function (event) {
+        //enter 
+        if (event.keyCode == 13) {
+            $scope.searchImages();
+        }
+    };
 
 }]); //--end mainCtrl
 
 
 //--------------------- services -------------------------//
+
 app.service("dataService", ["$http", function ($http) {
 
     this.findResults = function (keyword, callback) {
