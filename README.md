@@ -6,7 +6,7 @@ It provide a easy UI based bootstrap to search images and view image details in 
 
 Run with NodeJS
 ===============
-1.Please make sure the NodeJS has been installed on your system.
+1.Please make sure the NodeJS has been installed on your system. <br>
 2.Download project and unzip it or use git clone this project.
 ```bash
 git clone https://github.com/bruceman/docker-registry-quickviewer.git docker-registry-quickviewer
@@ -33,7 +33,7 @@ That's all, you can access http://your-host-name:3000/ to play it.
 
 Run with Docker
 ===============
-1.Please make sure the docker has been installed on your system.
+1.Please make sure the docker has been installed on your system.<br>
 2.Download project and unzip it or use git clone this project.
 ```bash
 git clone https://github.com/bruceman/docker-registry-quickviewer.git docker-registry-quickviewer
