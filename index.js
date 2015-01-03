@@ -6,15 +6,12 @@ var express = require('express')
 var app = express()
 
 //settings of docker registry server
-var config = JSON.parse(fs.readFileSync('config.js').toString());
-var dockerHostName = config["docker.hostname"] || "localhost";
-var dockerPort = config["docker.port"] || 5000;
-var appPort = config["app.port"] || 3000;
+var settings = JSON.parse(fs.readFileSync('config.js').toString());
 
 //Debug info
 console.log("Current Path: " + __dirname);
 console.log("Load Settings from config.js: ")
-console.log("%j", config);
+console.log("%j", settings);
 
 //static file handler
 app.use(express.static(__dirname + '/public'));
@@ -29,8 +26,8 @@ function error(status, msg) {
 //HTTP GET METHOD 
 function get(path, callback) {
     var options = {
-        hostname: dockerHostName,
-        port: dockerPort,
+        hostname: settings["docker.hostname"],
+        port: settings["docker.port"],
         path: path,
         method: 'GET'
     }
@@ -135,7 +132,7 @@ app.use(function (req, res) {
 
 //startup
 if (!module.parent) {
-    app.listen(appPort);
-    console.log("Server is running on port: " + appPort);
+    app.listen(3000);
+    console.log("Server is running on port: " + 3000);
 }
 

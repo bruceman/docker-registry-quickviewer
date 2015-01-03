@@ -7,7 +7,7 @@ ADD . /app
 
 WORKDIR /app
 
-VOLUME ["/app/config.js"]
+VOLUME ["/app"]
 
 CMD node index
 
